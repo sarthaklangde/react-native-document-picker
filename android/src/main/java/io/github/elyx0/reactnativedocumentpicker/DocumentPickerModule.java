@@ -99,7 +99,7 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 		this.promise = promise;
 
 		try {
-			Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+			Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
 			intent.addCategory(Intent.CATEGORY_OPENABLE);
 
 			intent.setType("*/*");
@@ -180,6 +180,8 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 		map.putString(FIELD_URI, uri.toString());
 
 		ContentResolver contentResolver = getReactApplicationContext().getContentResolver();
+    
+    contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
 		map.putString(FIELD_TYPE, contentResolver.getType(uri));
 
