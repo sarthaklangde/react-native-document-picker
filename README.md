@@ -1,4 +1,4 @@
-# This is a fork of react-native-document-picker with Android Persistable Permission so as to get permanent access to content:// URI
+## This is a fork of react-native-document-picker with Android Persistable Permission so as to get permanent access to content:// URI
 
 Original Package: 
 # react-native-document-picker: https://github.com/Elyx0/react-native-document-picker
