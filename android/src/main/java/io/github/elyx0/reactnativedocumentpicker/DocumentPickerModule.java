@@ -181,7 +181,7 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 
 		ContentResolver contentResolver = getReactApplicationContext().getContentResolver();
     
-    contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
 		map.putString(FIELD_TYPE, contentResolver.getType(uri));
 
